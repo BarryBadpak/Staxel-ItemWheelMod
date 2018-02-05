@@ -1,0 +1,86 @@
+﻿#HotBarContainer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    overflow: hidden;
+    z-index: -2
+}
+#HotBarItemVerbs {
+    width: 250px;
+    height: 25px;
+    position: absolute;
+    left: 50%;
+    bottom: 60px;
+    display: flex;
+    margin-right: -50%;
+    -webkit-transform: translate(-50%,-50%)
+}
+#HotBarVerbMain, #HotBarVerbAlt {
+    width: 95px;
+    height: 25px;
+    display: inline-block;
+    text-align: center;
+    font-size: 14pt;
+    color: white;
+    -webkit-transform: translate(0,-5px)
+}
+#HotBarHintMain {
+    margin-right: 15px;
+    margin-left: 10px
+}
+#HotBarHintMain, #HotBarHintAlt {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    background-size: 25px 25px;
+    padding-right: 25px
+}
+#HotBarOuter {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    height: 56px;
+    width: 396px;
+    margin-right: -50%;
+    -webkit-transform: translate(-50%,-50%);
+    background: #FC9939;
+    padding: 5px;
+    border-radius: 10px
+}
+#HotBarInner {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: #F2E8C7;
+    box-shadow: inset 0 3px 3px 0 #B33318;
+    padding: 0 4px
+}
+#HotBarInner .HotBarCell {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    float: left;
+    margin-top: 7px;
+    border-radius: 10px;
+    background: #edcf9a;
+    border: 2px solid transparent;
+    margin-right: 2px;
+    position: relative
+}
+#HotBarInner .HotBarCell:last-child {
+    margin-right: 0
+}
+.HotBarCell .HotBarNumber {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 12px;
+    color: #7d7d7d;
+    position: absolute;
+    top: 2px;
+    left: 4px
+}
+.HotBarCell.Active {
+    border: 2px solid #e06347 !important
+}

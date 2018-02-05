@@ -1,0 +1,21 @@
+﻿[
+  {
+    "outputFileName": "bin/Release/Assets/hotbar.min.html",
+    "inputFiles": [
+      "Assets/hotbar.html"
+    ]
+  },
+  {
+    "outputFileName": "bin/Release/Assets/style.min.css",
+    "inputFiles": [
+      "Assets/style.css"
+    ]
+  },
+  {
+    "outputFileName": "bin/Release/Assets/main.min.js",
+    "inputFiles": [
+      "Assets/main.js"
+    ],
+    "minify": {}
+  }
+]
