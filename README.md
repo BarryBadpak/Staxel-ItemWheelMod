@@ -1,4 +1,4 @@
-﻿# SunBeaM - Staxel Base Mod
+﻿# Staxel - ItemWheelMod
 
-This acts as a basemod for Staxel, mods can use this as a base to avoid code repetition and gain access
-to generic functionality.
+This mod is derived from Sunbeam and replaces the item wheel in the bottom right of the screen for a more traditional item hotbar
+that get's shown in the center at the bottom of the screen.
