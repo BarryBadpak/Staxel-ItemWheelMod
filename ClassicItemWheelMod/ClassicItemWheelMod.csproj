@@ -73,6 +73,7 @@
     <Compile Include="Patches\Overlayrenderer\DrawTopPatch.cs" />
     <Compile Include="Patches\Overlayrenderer\UpdatePatch.cs" />
     <Compile Include="Patches\Overlayrenderer\DrawPatch.cs" />
+    <Compile Include="Patches\Weboverlayrenderer\TestAndUpdateUIScalePatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
