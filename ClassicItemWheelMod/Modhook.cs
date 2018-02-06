@@ -24,9 +24,9 @@ namespace ClassicItemWheelMod
         /// </summary>
         public override void GameContextInitializeInit() {
 
-            this.DomAsset = AssetLoader.ReadFileContent("Assets/hotbar.min.html");
-            this.ScriptAsset = AssetLoader.ReadFileContent("Assets/main.min.js");
-            this.StyleAsset = AssetLoader.ReadFileContent("Assets/style.min.css");
+            this.DomAsset = this.AssetLoader.ReadFileContent("Assets/hotbar.min.html");
+            this.ScriptAsset = this.AssetLoader.ReadFileContent("Assets/main.min.js");
+            this.StyleAsset = this.AssetLoader.ReadFileContent("Assets/style.min.css");
         }
 
         /// <summary>
