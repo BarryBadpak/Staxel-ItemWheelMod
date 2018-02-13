@@ -1,14 +1,6 @@
-﻿using Plukit.Base;
-using Staxel;
-using Staxel.Core;
-using Staxel.Items;
-using Staxel.Logic;
+﻿using Staxel;
 using Staxel.Rendering;
-using Staxel.Tiles;
 using Sunbeam;
-using System;
-using System.IO;
-using System.Text.RegularExpressions;
 
 namespace ClassicItemWheelMod
 {
@@ -22,7 +14,7 @@ namespace ClassicItemWheelMod
         /// <summary>
         /// Load assets
         /// </summary>
-        public override void GameContextInitializeInit() {
+        protected override void GameContextInitializeInitOverride() {
 
             this.DomAsset = this.AssetLoader.ReadFileContent("Assets/hotbar.min.html");
             this.ScriptAsset = this.AssetLoader.ReadFileContent("Assets/main.min.js");
@@ -35,7 +27,7 @@ namespace ClassicItemWheelMod
         /// before ClientContextInitializeBefore and ClientCOntextInitializeInit is not called yet
         /// we have to, otherwise 
         /// </summary>
-        public override void UniverseUpdateAfter() {
+        protected override void UniverseUpdateAfterOverride() {
 
             WebOverlayRenderer overlay = ClientContext.WebOverlayRenderer;
             if (overlay != null && !HotBarController.Initialized)

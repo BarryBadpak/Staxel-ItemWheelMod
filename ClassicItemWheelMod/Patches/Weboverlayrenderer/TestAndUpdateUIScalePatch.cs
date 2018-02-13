@@ -1,5 +1,6 @@
 ﻿using Harmony;
 using Staxel;
+using Staxel.Browser;
 using Staxel.Client;
 using Staxel.Logic;
 using Staxel.Rendering;
@@ -7,7 +8,7 @@ using Staxel.Rendering;
 
 namespace ClassicItemWheelMod.Patches.Weboverlayrenderer
 {
-    [HarmonyPatch(typeof(WebOverlayRenderer), "TestAndUpdateUIScale")]
+    [HarmonyPatch(typeof(BrowserRenderSurface), "TestAndUpdateUIScale")]
     class TestAndUpdateUIScalePatch
     {
         [HarmonyPostfix]
