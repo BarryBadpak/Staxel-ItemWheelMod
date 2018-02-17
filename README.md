@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-	<img src="preview.png"/>
+	<img src="ClassicItemWheelMod/preview.png"/>
 </p>
 
 This mod is derived from Sunbeam and replaces the item wheel in the bottom right of the screen for a more traditional item hotbar
