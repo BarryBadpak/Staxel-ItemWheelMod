@@ -42,6 +42,10 @@
       <HintPath>..\..\..\..\SoftwareLibraries\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="FNA">
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Staxel\bin\FNA.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553" />
     <Reference Include="MonoGame.Framework, Version=3.6.0.1625, Culture=neutral, processorArchitecture=MSIL">
       <Private>False</Private>
@@ -69,7 +73,7 @@
   <ItemGroup>
     <Compile Include="HotBarController.cs" />
     <Compile Include="HotBarRenderer.cs" />
-    <Compile Include="Modhook.cs" />
+    <Compile Include="HotbarManager.cs" />
     <Compile Include="Patches\Overlayrenderer\DrawTopPatch.cs" />
     <Compile Include="Patches\Overlayrenderer\UpdatePatch.cs" />
     <Compile Include="Patches\Overlayrenderer\DrawPatch.cs" />
