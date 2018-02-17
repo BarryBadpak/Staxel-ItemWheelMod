@@ -3,7 +3,7 @@ using Sunbeam;
 
 namespace ClassicItemWheelMod
 {
-	public class HotbarManager : SunbeamMod
+	public class HotbarManager: SunbeamMod
 	{
 		public override string ModIdentifier => "ClassicItemWheelMod";
 		public static HotbarManager Instance { get; private set; }
