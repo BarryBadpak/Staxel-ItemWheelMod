@@ -17,6 +17,7 @@ namespace ClassicItemWheelMod
 	{
 		public bool IsShowing = false;
 
+		private TextRenderer TextRenderer = new TextRenderer(false);
 		private readonly Dictionary<Quad<string, string, string, string>, string> ControlHintJsonCache = new Dictionary<Quad<string, string, string, string>, string>();
 		private ControlHintVerbs _prevControlHints;
 
@@ -44,7 +45,7 @@ namespace ClassicItemWheelMod
 		/// <param name="avatar"></param>
 		/// <param name="avatarPainter"></param>
 		/// <param name="universe"></param>
-		public void DrawItemVoxels(DeviceContext graphics, Matrix4F matrix, Vector3D renderOrigin, Entity avatar, EntityPainter avatarPainter, Universe universe)
+		public void DrawItemVoxels(DeviceContext graphics, Matrix4F matrix, Entity avatar)
 		{
 			if (!this.IsShowing)
 			{
@@ -97,10 +98,15 @@ namespace ClassicItemWheelMod
 			graphics.PopShader();
 			graphics.SetProjectionMatrix(projectionMatrix);
 			graphics.PopRenderState();
-			graphics.ApplyRenderState();
+		}
 
-
-			TextRenderer renderer = new TextRenderer(false);
+		/// <summary>
+		/// Render the item hotbar counts
+		/// </summary>
+		/// <param name="graphics"></param>
+		/// <param name="avatar"></param>
+		public void DrawItemCounts(DeviceContext graphics, Entity avatar)
+		{
 			for (int i = 0; i < 10; i++)
 			{
 				int count = default(int);
@@ -110,29 +116,21 @@ namespace ClassicItemWheelMod
 					Vector2F p = HotbarManager.Instance.Controller.GetSlotPosition(i);
 					p *= Constants.UIZoomFactor;
 
-					renderer.DrawInteger(count, p + new Vector2F(Constants.ItemCountOffsetX, Constants.ItemCountOffsetY) * Constants.UIZoomFactor);
+					this.TextRenderer.DrawInteger(count, p + new Vector2F(Constants.ItemCountOffsetX, Constants.ItemCountOffsetY) * Constants.UIZoomFactor);
 				}
 			}
 
-			renderer.Draw(graphics);
-			graphics.ClearDepth();
+			this.TextRenderer.Draw(graphics);
 		}
 
 		/// <summary>
 		/// Draw
 		/// </summary>
-		/// <param name="graphics"></param>
-		/// <param name="matrix"></param>
 		/// <param name="avatar"></param>
-		/// <param name="universe"></param>
-		/// <param name="avatarController"></param>
-		public void Draw(DeviceContext graphics, Matrix4F matrix, Entity avatar, Universe universe, AvatarController avatarController)
+		public void Draw(Entity avatar)
 		{
 			if (avatar != null)
 			{
-				// Without this ClearDepth call it won't render the item bar
-				graphics.ClearDepth();
-
 				if (avatar.PlayerEntityLogic.LockedInConversation || ClientContext.OverlayController.Interruptions.IsOpen() || ClientContext.OverlayController.LoadingScreen.CaptureInput() || ClientContext.OverlayController.Interruptions.CaptureInput() || ClientContext.OverlayController.ParticleEditor.CaptureInput())
 				{
 					if (this.IsShowing)

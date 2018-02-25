@@ -56,12 +56,8 @@ namespace ClassicItemWheelMod.Patches.Overlayrenderer
 		/// Checks for viewport size changes
 		/// </summary>
 		/// <param name="graphics"></param>
-		/// <param name="matrix"></param>
-		/// <param name="avatar"></param>
-		/// <param name="universe"></param>
-		/// <param name="avatarController"></param>
 		[HarmonyPrefix]
-		static void beforeDraw(DeviceContext graphics, Matrix4F matrix, Entity avatar, Universe universe, AvatarController avatarController)
+		static void beforeDraw(DeviceContext graphics)
 		{
 			Vector2I viewPortSize = graphics.GetViewPortSize();
 			if (viewPortSize != DrawPatch._prevViewPortSize)
@@ -74,15 +70,11 @@ namespace ClassicItemWheelMod.Patches.Overlayrenderer
 		/// <summary>
 		/// After draw call our HotbarRenderer
 		/// </summary>
-		/// <param name="graphics"></param>
-		/// <param name="matrix"></param>
 		/// <param name="avatar"></param>
-		/// <param name="universe"></param>
-		/// <param name="avatarController"></param>
 		[HarmonyPostfix]
-		static void afterDraw(DeviceContext graphics, Matrix4F matrix, Entity avatar, Universe universe, AvatarController avatarController)
+		static void afterDraw(Entity avatar)
 		{
-			HotbarManager.Instance.Controller.Renderer.Draw(graphics, matrix, avatar, universe, avatarController);
+			HotbarManager.Instance.Controller.Renderer.Draw(avatar);
 		}
 	}
 }
