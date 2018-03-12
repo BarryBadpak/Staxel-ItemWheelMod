@@ -95,8 +95,6 @@ namespace ClassicItemWheelMod
 			for (int k = 0; k < layout.Count; k++)
 			{
 				Blob entry = layout[k].Blob();
-				Logger.WriteLine("Layout-" + k.ToString());
-				Logger.WriteLine(entry.GetLong("left").ToString() + "," + entry.GetLong("top").ToString());
 				this.Layout[k] = new Vector2F((float)entry.GetLong("left"), (float)entry.GetLong("top"));
 			}
 

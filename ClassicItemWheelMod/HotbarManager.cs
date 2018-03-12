@@ -18,9 +18,9 @@ namespace ClassicItemWheelMod
 		{
 			HotbarManager.Instance = this;
 
-			this.HTMLAsset = this.AssetLoader.ReadFileContent("Assets/hotbar.min.html");
-			this.JSAsset = this.AssetLoader.ReadFileContent("Assets/main.min.js");
-			this.CSSAsset = this.AssetLoader.ReadFileContent("Assets/style.min.css");
+			this.HTMLAsset = this.FileHelper.ReadFileContent("Assets/hotbar.min.html");
+			this.JSAsset = this.FileHelper.ReadFileContent("Assets/main.min.js");
+			this.CSSAsset = this.FileHelper.ReadFileContent("Assets/style.min.css");
 		}
 
 		/// <summary>
