@@ -32,10 +32,14 @@ namespace ClassicItemWheelMod
 		/// </summary>
 		private void Bind()
 		{
-			WebOverlayRenderer overlay = ClientContext.WebOverlayRenderer;
-			overlay.Bind("hotbarBindSlots", this.BindSlots);
-			overlay.Bind("hotbarAfterShow", this.OnShow);
-			overlay.Bind("hotbarAfterHide", this.OnHide);
+		    try {
+		        WebOverlayRenderer overlay = ClientContext.WebOverlayRenderer;
+		        overlay.Bind("hotbarBindSlots", this.BindSlots);
+		        overlay.Bind("hotbarAfterShow", this.OnShow);
+		        overlay.Bind("hotbarAfterHide", this.OnHide);
+		    } catch {
+                // Catch the exception if the function is already bound to the web overlay renderer
+		    }
 		}
 
 		/// <summary>
